@@ -12,5 +12,10 @@ pipeline {
                 echo 'hello testing done'
             }
         }
+        stage('Packaging'){
+            steps{
+                bat label: '', script: '''mvn package'''
+            }
+        }
     }
 }
