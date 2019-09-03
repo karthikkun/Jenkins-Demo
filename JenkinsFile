@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat label: '', script: '''mvn clean install'''
+                bat label: '', script: '''mvn clean install -DskipTests=false'''
             }
         }
         stage('Test') { 
             steps {
-                echo 'hello testing done'
                 bat label: '', script: '''mvn test'''
+                echo 'hello testing done'
             }
         }
     }
